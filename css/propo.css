@@ -171,68 +171,64 @@ main {
 }
 
 /* Partners Section */
-.partners-section {
-    margin: 4rem 0;
-    text-align: center;
-}
-
-.partners-section h1 {
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    color: var(--primary);
-    position: relative;
-    display: inline-block;
-    padding-bottom: 1rem;
-}
-
-.partners-section h1::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: var(--secondary);
-}
-
+/* Partners Section */
 .partners-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
-    margin-top: 2rem;
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .partner {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 120px;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
 }
 
 .partner:hover {
-    transform: translateY(-5px);
+    transform: scale(1.05);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .partner img {
-    max-width: 80%;
-    max-height: 80%;
-    filter: grayscale(100%) contrast(120%);
-    transition: filter 0.3s ease;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
 }
 
-.partner:hover img {
-    filter: grayscale(0%) contrast(100%);
+/* Pour rendre la section responsive */
+@media (max-width: 768px) {
+    .partner {
+        min-width: 150px;
+        max-width: 200px;
+    }
 }
 
+@media (max-width: 480px) {
+    .partners-container {
+        gap: 1rem;
+        padding: 2rem 1rem;
+    }
+    
+    .partner {
+        min-width: 120px;
+        max-width: 160px;
+        padding: 1rem;
+    }
+}
 /* Footer */
 footer {
     background: var(--primary);
