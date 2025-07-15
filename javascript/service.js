@@ -61,34 +61,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('nav ul'); // Adjust selector based on your nav structure
-    
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            // Toggle active class on menu toggle
-            this.classList.toggle('active');
-            
-            // Toggle menu visibility - adjust based on how you want to show/hide the menu
-            if (navMenu) {
-                navMenu.classList.toggle('active');
-            }
-            
-            // Optional: Prevent scrolling when menu is open
-            document.body.classList.toggle('no-scroll');
-        });
-    }
-    
-    // Optional: Close menu when clicking on a nav link
-    const navLinks = document.querySelectorAll('nav ul li a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            if (menuToggle.classList.contains('active')) {
-                menuToggle.classList.remove('active');
-                if (navMenu) navMenu.classList.remove('active');
-                document.body.classList.remove('no-scroll');
-            }
-        });
-    });
-});
